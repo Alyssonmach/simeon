@@ -67,3 +67,5 @@ Thumbs.db
 # --------
 *.dll
 *.exe
+# Build output, copied topologies and simulation results
+/build/
