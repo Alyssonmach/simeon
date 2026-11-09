@@ -1,10 +1,10 @@
 TEMPLATE = app
 
-CONFIG += console c++11
+CONFIG += console c++17
 CONFIG -= app_bundle qt
 
-QMAKE_CXXFLAGS += -std=c++11 -fopenmp
-QMAKE_LFLAGS += -std=c++11 -fopenmp
+QMAKE_CXXFLAGS += -std=c++17 -Xpreprocessor -fopenmp -I/opt/homebrew/opt/libomp/include
+QMAKE_LFLAGS += -L/opt/homebrew/opt/libomp/lib -L/opt/homebrew/lib
 QMAKE_CXXFLAGS_RELEASE -= -O
 QMAKE_CXXFLAGS_RELEASE -= -O1
 QMAKE_CXXFLAGS_RELEASE -= -O2
@@ -271,7 +271,7 @@ HEADERS += \
     include/SimulationTypes/Simulation_TransparencyAnalysis.h \
     include/RMSA/RoutingAlgorithms/Costs/PowerSeriesRouting/Costs/Cost_NormalizedNoise.h
 
-LIBS += -lboost_system -lboost_program_options -larmadillo -lgtest
+LIBS += -lboost_program_options -larmadillo -lgtest -L/opt/homebrew/opt/libomp/lib -lomp
 
 INSTALL_TOPOLOGIES.path = $$OUT_PWD/data/topologies
 INSTALL_TOPOLOGIES.files = data/topologies/*
@@ -286,4 +286,4 @@ CONFIG(debug, debug|release) {
 DEFINES += RUN_TESTS RUN_ASSERTIONS
 }
 
-INCLUDEPATH += include/
+INCLUDEPATH += include/ /opt/homebrew/include
