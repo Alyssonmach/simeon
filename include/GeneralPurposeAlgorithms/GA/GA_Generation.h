@@ -1,3 +1,4 @@
+#include <string>
 #ifndef GA_GENERATION_H
 #define GA_GENERATION_H
 

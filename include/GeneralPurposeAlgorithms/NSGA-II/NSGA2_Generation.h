@@ -1,3 +1,4 @@
+#include <string>
 #ifndef NSGA2_GENERATION_H
 #define NSGA2_GENERATION_H
 

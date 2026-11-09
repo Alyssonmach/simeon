@@ -71,7 +71,7 @@ bool ModulationScheme::operator !=(const ModulationScheme &scheme) const
 
 Gain ModulationScheme::get_ThresholdOSNR(TransmissionBitrate &BitRate) const
 {
-    return Gain(0.5 * BitRate.get_Bitrate() * pow10(0.1 * SNR_Per_Bit.in_dB()) /
+    return Gain(0.5 * BitRate.get_Bitrate() * std::pow(10.0, 0.1 * SNR_Per_Bit.in_dB()) /
                 PhysicalConstants::BRef, Gain::Linear);
 }
 

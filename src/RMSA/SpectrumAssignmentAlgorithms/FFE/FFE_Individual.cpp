@@ -25,7 +25,7 @@ void FFE_Individual::createIndividual()
         {
         Gene[nS] = std::vector<int>(Link::NumSlots);
         std::iota(Gene[nS].begin(), Gene[nS].end(), 0);
-        std::random_shuffle(Gene[nS].begin(), Gene[nS].end());
+        std::shuffle(Gene[nS].begin(), Gene[nS].end(), random_generator);
         }
 }
 

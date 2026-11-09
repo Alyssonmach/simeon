@@ -63,7 +63,7 @@ double Gain::in_Linear()
 {
     if (!calculatedLinear)
         {
-        value_Linear = pow10(0.1 * value_dB);
+        value_Linear = std::pow(10.0, 0.1 * value_dB);
         calculatedLinear = true;
         }
 
